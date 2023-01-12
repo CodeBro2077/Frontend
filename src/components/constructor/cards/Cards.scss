@@ -1,0 +1,22 @@
+.cards {}
+
+.card {
+    &__item {
+        background: white;
+        padding: 15px;
+        margin-bottom: 30px;
+        color: #333A4D;
+    }
+}
+
+.item-card {
+    &__title {
+
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    &__description {
+        margin-bottom: 15px;
+    }
+}

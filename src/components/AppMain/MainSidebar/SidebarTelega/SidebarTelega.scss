@@ -1,0 +1,23 @@
+.telegram {
+    width: 100%;
+
+    background: #378ff6;
+    border-radius: 5px;
+    box-shadow: 1px 1px 7px 1px #3790f67c;
+
+    color: white;
+
+    text-align: center;
+    font-weight: 500;
+
+    padding: 3px 0;
+    margin-bottom: 40px;
+
+    &:hover {
+        transition: 0.3s all ease;
+
+        box-shadow: 1px 1px 7px 4px #3790f67c;
+    }
+
+    &__item {}
+}

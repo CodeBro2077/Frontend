@@ -1,0 +1,22 @@
+.main {
+    margin: 40px auto 0 auto;
+    position: relative;
+
+    height: auto;
+
+    &__container {
+        width: 1080px;
+
+        @media (max-width: 1080px) {
+            width: 100%;
+        }
+
+        padding: 0 20px;
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+
+        gap: 45px;
+    }
+
+}

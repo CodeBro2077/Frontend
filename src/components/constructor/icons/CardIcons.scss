@@ -1,0 +1,26 @@
+.item-card {
+
+    &__icons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .icons-card {
+
+        &__ratings {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 5px;
+        }
+
+        &__quantity {
+            margin-left: 5px;
+            font-size: 14px;
+            color: #262626;
+        }
+
+
+    }
+}
