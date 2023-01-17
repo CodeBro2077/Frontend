@@ -25,11 +25,11 @@
 
     &-open {
         background: #378FF6;
-        color: white;
 
 
 
         & span {
+            color: white;
             transition: all 0.15s ease;
             transform: rotate(45deg);
         }

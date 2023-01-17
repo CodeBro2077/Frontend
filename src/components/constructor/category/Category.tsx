@@ -2,6 +2,7 @@ import './category.scss'
 
 import Plus from "./plus/Plus";
 import {useEffect, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
 
 
 
@@ -24,8 +25,6 @@ function Category() {
 
     //-- При клике на НЕВЫБРАННУЮ категорию, срабатывает эта функция
     const clickCategory = (id:number) => {
-
-
         Categories.filter((elem, index) => {
 
             if (id === index) {
@@ -33,10 +32,7 @@ function Category() {
                 // Добавляем кликнутый элемент в массив выбранных категорий 
                 // @ts-ignore
                 setSelectCategories((prev) => [...prev, elem])
-
                 // -- Это чтобы красиво было и элемент попадал вначало списка
-                setSelectCategories(prev => prev.reverse())
-
                 // Удаляем кликнутый элемет из всех элемертов категорий
                 setCategories(Categories.filter((element) => element !== elem))
 
@@ -102,7 +98,6 @@ function Category() {
                 </div>
 
                 {selectCategories.map((elem, id:number) => {
-
                     return (
                         <div onClick={() => clickSelectCategory(id)} key={id} className={`items-category__item blue`}>
                             <span>{elem}</span>
