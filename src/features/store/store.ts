@@ -1,12 +1,14 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import categorySlice from "./reducers/CategorySlice";
+import CategorySlice from "./reducers/CategorySlice";
 
 export const store = configureStore({
-    reducer: categorySlice
+    reducer: {
+        isOpen: CategorySlice,
+    },
 });
 
-export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof categorySlice>;
+export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>
 export type AppThunk<ReturnType = void> = ThunkAction<
     ReturnType,
     RootState,

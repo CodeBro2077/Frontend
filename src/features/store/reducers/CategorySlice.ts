@@ -1,6 +1,6 @@
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface CategorySlice {
+export interface CategorySlice {
     isOpen: boolean
 }
 const initialState: CategorySlice = {
@@ -8,17 +8,15 @@ const initialState: CategorySlice = {
 }
 
 
-export const categorySlice = createSlice({
+export const CategorySlice = createSlice({
     name: "categorySlice",
     initialState,
     reducers: {
-        openCategories: (state) => {
-            state.isOpen = true
+        toggleCategories: (state) => {
+            state.isOpen = !state.isOpen;
         },
-        closeCategories: (state) => {
-            state.isOpen = false
-        }
+
     }
 })
-export const {openCategories, closeCategories} = categorySlice.actions
-export default categorySlice.reducer
+export const { toggleCategories } = CategorySlice.actions
+export default CategorySlice.reducer

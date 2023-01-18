@@ -1,8 +1,9 @@
 import './category.scss'
 
 import Plus from "./plus/Plus";
-import {useEffect, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import type { RootState } from '../../../features/store/store';
 
 
 
@@ -12,7 +13,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 function Category() {
     //- Инициализирующий массив всех категорий
-    let initializationArray:string[] = ['JavaScript', 'Python', 'Web', 'Обучение', 'Data science', 'C++', 'Java', 'DevOps', 'Frontend', 'Backend', 'Kotlin', 'Ruby', 'Scala', 'Git', 'Rust', 'UX/UI', '1C', 'AR/VR', 'GameDev', 'Go', 'IOS', 'Android', 'PHP']
+    let initializationArray: string[] = ['JavaScript', 'Python', 'Web', 'Обучение', 'Data science', 'C++', 'Java', 'DevOps', 'Frontend', 'Backend', 'Kotlin', 'Ruby', 'Scala', 'Git', 'Rust', 'UX/UI', '1C', 'AR/VR', 'GameDev', 'Go', 'IOS', 'Android', 'PHP']
 
     //- Это массив всех элементов категории
     const [Categories, setCategories] = useState(initializationArray)
@@ -24,7 +25,7 @@ function Category() {
 
 
     //-- При клике на НЕВЫБРАННУЮ категорию, срабатывает эта функция
-    const clickCategory = (id:number) => {
+    const clickCategory = (id: number) => {
         Categories.filter((elem, index) => {
 
             if (id === index) {
@@ -43,7 +44,7 @@ function Category() {
     }
 
     //-- При клике на ВЫБРАННУЮ категорию, срабатывает эта функция
-    const clickSelectCategory = (id:number) => {
+    const clickSelectCategory = (id: number) => {
 
 
         selectCategories.filter((elem, index) => {
@@ -56,7 +57,6 @@ function Category() {
         })
 
     }
-
 
     // Вызываем при клике на кнопку 'Все'
     useEffect(() => {
@@ -81,6 +81,9 @@ function Category() {
         setAllSelected(!allSelected)
     }
 
+    const isOpen = useSelector((state: RootState) => state.isOpen.isOpen)
+
+
 
 
 
@@ -91,13 +94,13 @@ function Category() {
 
 
             {/* Тут выводим выбранные категории */}
-            <div className="category__items items-category">
+            <div className={`category__items items-category ${isOpen ? '' : 'category-open'}`}>
 
                 <div onClick={changeAllSelection} className={`items-category__item ${allSelected ? 'blue' : ''}`}>
                     <span>Все</span>
                 </div>
 
-                {selectCategories.map((elem, id:number) => {
+                {selectCategories.map((elem, id: number) => {
                     return (
                         <div onClick={() => clickSelectCategory(id)} key={id} className={`items-category__item blue`}>
                             <span>{elem}</span>

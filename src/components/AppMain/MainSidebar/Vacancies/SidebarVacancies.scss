@@ -29,6 +29,10 @@
     &__description {}
 
     &__title {
+        font-family: Arial;
+        font-weight: 600;
+        margin-bottom: 3px;
+        color: #333A4D;
         font-weight: 600;
 
         &:hover {
@@ -36,7 +40,13 @@
         }
     }
 
-    &__salary {}
+    &__city {
+        color: #8B92A5;
+    }
+
+    &__salary {
+        color: #8B92A5;
+    }
 }
 
 .item-vacancies {
@@ -54,5 +64,7 @@
         margin-right: 20px;
     }
 
-    &__information {}
+    &__information {
+        color: aqua;
+    }
 }
